@@ -1,0 +1,161 @@
+.main-menu {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(ellipse at 50% 20%, #1a2a4a 0%, #0a0a1a 70%);
+  padding: 24px;
+}
+
+.menu-content {
+  max-width: 520px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  align-items: center;
+}
+
+/* ── Title block ─────────────────────────────────────────────────────────── */
+.title-block {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.title-wheel svg {
+  filter: drop-shadow(0 4px 16px rgba(241, 196, 15, 0.4));
+  animation: wheelSpin 12s linear infinite;
+}
+
+@keyframes wheelSpin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.game-title {
+  font-size: 3.2rem;
+  font-weight: 900;
+  margin: 0;
+  line-height: 1.05;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title-wheel-text {
+  color: #f1c40f;
+  text-shadow: 0 2px 16px rgba(241, 196, 15, 0.6);
+  letter-spacing: 3px;
+}
+
+.title-of {
+  font-size: 1.6rem;
+  color: #7f8c8d;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+}
+
+.title-fortune {
+  color: #4a90d9;
+  text-shadow: 0 2px 16px rgba(74, 144, 217, 0.5);
+  letter-spacing: 3px;
+}
+
+.tagline {
+  color: #7f8c8d;
+  font-size: 0.9rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+/* ── Buttons ─────────────────────────────────────────────────────────────── */
+.menu-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+}
+
+.menu-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 16px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.2s ease;
+}
+
+.menu-btn.primary {
+  background: linear-gradient(135deg, #f1c40f, #e67e22);
+  color: #1a1a2e;
+  box-shadow: 0 4px 20px rgba(241, 196, 15, 0.35);
+}
+.menu-btn.primary:hover {
+  background: linear-gradient(135deg, #f9d71c, #f39c12);
+  box-shadow: 0 6px 28px rgba(241, 196, 15, 0.55);
+  transform: translateY(-2px);
+}
+
+.menu-btn.secondary {
+  background: transparent;
+  color: #4a90d9;
+  border: 2px solid #4a90d9;
+}
+.menu-btn.secondary:hover {
+  background: rgba(74, 144, 217, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(74, 144, 217, 0.2);
+}
+
+.btn-icon {
+  font-size: 1rem;
+}
+
+/* ── Rules ───────────────────────────────────────────────────────────────── */
+.menu-rules {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid #2c4870;
+  border-radius: 12px;
+  padding: 20px 24px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.rules-title {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #4a90d9;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.rules-list {
+  margin: 0;
+  padding-left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.rules-list li {
+  color: #7f8c8d;
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+.rules-list strong {
+  color: #e74c3c;
+}
