@@ -1,0 +1,76 @@
+.player-panel {
+  background: #0f1929;
+  border: 2px solid #2c4870;
+  border-radius: 12px;
+  padding: 16px 20px;
+  min-width: 160px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.player-panel.active {
+  border-color: #f1c40f;
+  box-shadow: 0 0 16px rgba(241, 196, 15, 0.35);
+}
+
+.player-panel.inactive {
+  opacity: 0.65;
+}
+
+.active-indicator {
+  font-size: 0.6rem;
+  font-weight: 800;
+  color: #f1c40f;
+  letter-spacing: 2px;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+.player-name {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.balance-row {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.balance-divider {
+  width: 1px;
+  height: 36px;
+  background: #2c4870;
+  margin: 0 12px;
+}
+
+.balance-block {
+  flex: 1;
+  text-align: center;
+}
+
+.balance-label {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #7f8c8d;
+  margin-bottom: 2px;
+}
+
+.balance-value {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.round-bal {
+  color: #4a90d9;
+}
+
+.total-bal {
+  color: #27ae60;
+}

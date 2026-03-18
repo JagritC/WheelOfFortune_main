@@ -1,0 +1,33 @@
+.spin-wheel-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.wheel-container {
+  position: relative;
+  display: inline-block;
+}
+
+.wheel-pointer {
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  color: #f1c40f;
+  z-index: 10;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+  line-height: 1;
+}
+
+.wheel-svg {
+  display: block;
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 6px #1a1a2e,
+    0 0 0 10px #4a90d9,
+    0 8px 32px rgba(0, 0, 0, 0.6);
+  transition: transform 0ms;
+}

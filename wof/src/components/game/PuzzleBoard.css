@@ -1,0 +1,89 @@
+.puzzle-board {
+  background: #0a0a1a;
+  border: 3px solid #4a90d9;
+  border-radius: 12px;
+  padding: 20px 24px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.puzzle-category {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #2a3a5a;
+}
+
+.category-label {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #f1c40f;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.hint-label {
+  font-size: 0.8rem;
+  color: #7f8c8d;
+  font-style: italic;
+}
+
+.puzzle-words {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: center;
+  min-height: 80px;
+  align-items: center;
+}
+
+.puzzle-word {
+  display: flex;
+  gap: 4px;
+}
+
+.letter-tile {
+  width: 44px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  position: relative;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.letter-tile.hidden {
+  background: #1e2d4a;
+  border: 2px solid #2c4870;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.letter-tile.revealed {
+  background: linear-gradient(135deg, #ffffff 0%, #e8e8e8 100%);
+  border: 2px solid #bbb;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255,255,255,0.8);
+  animation: flipIn 0.35s ease forwards;
+}
+
+@keyframes flipIn {
+  from {
+    transform: rotateY(90deg) scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: rotateY(0deg) scale(1);
+    opacity: 1;
+  }
+}
+
+.letter-char {
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: #1a1a2e;
+  line-height: 1;
+  font-family: 'Georgia', serif;
+  user-select: none;
+}
