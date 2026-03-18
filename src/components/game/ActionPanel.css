@@ -1,0 +1,295 @@
+.action-panel {
+  background: #0f1929;
+  border: 2px solid #2c4870;
+  border-radius: 12px;
+  padding: 16px 20px;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* ── Status message ─────────────────────────────────────────────────────── */
+.status-message {
+  font-size: 0.9rem;
+  color: #c9d8ef;
+  text-align: center;
+  margin-bottom: 14px;
+  min-height: 1.4em;
+  font-style: italic;
+}
+
+.status-message.pulsing {
+  animation: pulse 0.8s ease-in-out infinite alternate;
+  color: #f1c40f;
+}
+
+@keyframes pulse {
+  from { opacity: 0.6; }
+  to   { opacity: 1; }
+}
+
+/* ── Solve overlay ──────────────────────────────────────────────────────── */
+.solve-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+}
+
+.solve-box {
+  background: #0f1929;
+  border: 2px solid #4a90d9;
+  border-radius: 16px;
+  padding: 28px 32px;
+  min-width: 360px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.8);
+}
+
+.solve-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.solve-input {
+  background: #1e2d4a;
+  border: 2px solid #4a90d9;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+  outline: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.solve-input:focus {
+  border-color: #f1c40f;
+  box-shadow: 0 0 8px rgba(241, 196, 15, 0.3);
+}
+
+.solve-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+/* ── Action row ─────────────────────────────────────────────────────────── */
+.action-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* ── Buttons ────────────────────────────────────────────────────────────── */
+.btn {
+  border: none;
+  border-radius: 8px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-family: inherit;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.btn:disabled {
+  opacity: 0.38;
+  cursor: not-allowed;
+}
+
+.btn-spin {
+  background: linear-gradient(135deg, #f1c40f, #e67e22);
+  color: #1a1a2e;
+  font-size: 1.1rem;
+  padding: 14px 22px;
+  min-width: 90px;
+  box-shadow: 0 4px 12px rgba(241, 196, 15, 0.3);
+}
+.btn-spin:not(:disabled):hover {
+  background: linear-gradient(135deg, #f9d71c, #f39c12);
+  box-shadow: 0 6px 16px rgba(241, 196, 15, 0.5);
+  transform: translateY(-1px);
+}
+.btn-spin.spinning {
+  animation: spinBtnPulse 0.6s ease-in-out infinite alternate;
+}
+@keyframes spinBtnPulse {
+  from { box-shadow: 0 4px 12px rgba(241, 196, 15, 0.3); }
+  to   { box-shadow: 0 4px 24px rgba(241, 196, 15, 0.8); }
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #4a90d9, #2980b9);
+  color: #fff;
+  font-size: 0.85rem;
+  padding: 10px 18px;
+  box-shadow: 0 2px 8px rgba(74, 144, 217, 0.3);
+}
+.btn-primary:not(:disabled):hover {
+  background: linear-gradient(135deg, #5aa0e9, #3498db);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: linear-gradient(135deg, #8e44ad, #6c3483);
+  color: #fff;
+  font-size: 0.85rem;
+  padding: 10px 18px;
+}
+.btn-secondary:not(:disabled):hover {
+  background: linear-gradient(135deg, #9b59b6, #7d3c98);
+  transform: translateY(-1px);
+}
+
+.btn-solve {
+  background: linear-gradient(135deg, #27ae60, #1e8449);
+  color: #fff;
+  font-size: 1rem;
+  padding: 14px 20px;
+  box-shadow: 0 4px 12px rgba(39, 174, 96, 0.3);
+}
+.btn-solve:not(:disabled):hover {
+  background: linear-gradient(135deg, #2ecc71, #27ae60);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(39, 174, 96, 0.5);
+}
+
+.btn-ghost {
+  background: transparent;
+  border: 2px solid #4a90d9;
+  color: #4a90d9;
+  font-size: 0.85rem;
+  padding: 8px 16px;
+}
+.btn-ghost:hover {
+  background: rgba(74, 144, 217, 0.1);
+}
+
+/* ── Guess area ─────────────────────────────────────────────────────────── */
+.guess-area {
+  flex: 1;
+  min-width: 0;
+}
+
+.guess-tabs {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 10px;
+}
+
+.tab-btn {
+  background: transparent;
+  border: 2px solid #2c4870;
+  border-radius: 6px;
+  color: #7f8c8d;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 5px 12px;
+  cursor: pointer;
+  font-family: inherit;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all 0.15s ease;
+}
+.tab-btn.active {
+  border-color: #4a90d9;
+  color: #4a90d9;
+  background: rgba(74, 144, 217, 0.1);
+}
+.tab-btn:hover:not(.active) {
+  border-color: #4a90d9;
+  color: #c9d8ef;
+}
+
+.cost-badge {
+  font-size: 0.65rem;
+  background: #8e44ad;
+  color: #fff;
+  border-radius: 4px;
+  padding: 1px 5px;
+  margin-left: 4px;
+}
+
+.letter-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.letter-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  flex: 1;
+}
+
+.letter-btn {
+  width: 30px;
+  height: 30px;
+  background: #1e2d4a;
+  border: 1.5px solid #2c4870;
+  border-radius: 5px;
+  color: #c9d8ef;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.1s ease;
+}
+.letter-btn:hover:not(:disabled) {
+  background: #2c4870;
+  border-color: #4a90d9;
+  color: #fff;
+}
+.letter-btn.selected {
+  background: #4a90d9;
+  border-color: #4a90d9;
+  color: #fff;
+  box-shadow: 0 0 8px rgba(74, 144, 217, 0.5);
+}
+.letter-btn.used {
+  background: #141f2e;
+  border-color: #1e2d4a;
+  color: #2c4870;
+  cursor: not-allowed;
+  text-decoration: line-through;
+}
+
+/* ── Used letters ───────────────────────────────────────────────────────── */
+.used-letters {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #2c4870;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.used-label {
+  font-size: 0.7rem;
+  color: #7f8c8d;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.used-letter {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #4a4a6a;
+  background: #141f2e;
+  border-radius: 3px;
+  padding: 1px 5px;
+}
